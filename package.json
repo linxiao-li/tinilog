@@ -1,0 +1,35 @@
+{
+  "name": "minilog",
+  "version": "1.0.0",
+  "description": "minimalism command line tool for logging",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "mlog": "./index.js"
+  },
+  "keywords": [
+    "CLI",
+    "Productivity",
+    "workjournal"
+  ],
+  "author": "Linxiao Li",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "clear": "0.0.1",
+    "clui": "^0.3.6",
+    "commander": "^2.11.0",
+    "console.table": "^0.9.1",
+    "figlet": "^1.2.0",
+    "github": "^10.1.0",
+    "inquirer": "^3.2.3",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "preferences": "^0.2.1",
+    "random-id": "0.0.2",
+    "simple-git": "^1.77.0",
+    "touch": "^3.1.0"
+  }
+}
