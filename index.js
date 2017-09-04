@@ -26,7 +26,7 @@ function parseArguments() {
         clear();
         console.log(
             chalk.yellow(
-                figlet.textSync('MINI LOG', { horizontalLayout: 'full' })
+                figlet.textSync('TINILOG', { horizontalLayout: 'full' })
             )
         );
         switch (argvObj._[0]) {
@@ -37,14 +37,23 @@ function parseArguments() {
 
                 break;
             case "list":
-                fs.readFile(filePath, 'utf8', function(err, data) {
-                    if (err) {
-                        throw err;
-                    } else {
-                        console.table(JSON.parse(data))
-                    }
-                    //Do your processing, MD5, send a satellite to the moon, etc.
-                });
+                if (fs.existsSync(filePath)) {
+                    fs.readFile(filePath, 'utf8', function(err, data) {
+                        if (err) {
+                            throw err;
+                        } else {
+                            if (data.length > 0) {
+
+                                console.table(JSON.parse(data))
+                            } else {
+                                console.log("No record found...")
+                            }
+                        }
+                        //Do your processing, MD5, send a satellite to the moon, etc.
+                    });
+                } else {
+                    console.log("No record found...")
+                }
                 break;
         }
     } else if (!_.isEmpty(optionObj)) {
@@ -101,5 +110,4 @@ function writeToFile(data) {
 
 }
 
-//parseArguments();
-console.log(process)
+parseArguments();
